@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>PyTalavera - Comunidad Python de Puebla | Puebla Python Community</title>
+  <meta name="title" content="PyTalavera - Comunidad Python de Puebla">
+  <meta name="description" content="Comunidad oficial de Python en Puebla, México. Aprende, comparte y crece con desarrolladores Python. Official Python community in Puebla, Mexico. Learn, share, and grow with Python developers.">
+  <meta name="keywords" content="Python, Puebla, PyTalavera, Comunidad, Programming, Desarrollo, Community">
+  <meta name="author" content="PyTalavera">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pytalavera.github.io/comunidad/">
+  <meta property="og:title" content="PyTalavera - Comunidad Python de Puebla">
+  <meta property="og:description" content="Comunidad oficial de Python en Puebla, México. Aprende, comparte y crece con desarrolladores Python.">
+  <meta property="og:image" content="https://pytalavera.github.io/comunidad/assets/images/logo.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://pytalavera.github.io/comunidad/">
+  <meta property="twitter:title" content="PyTalavera - Comunidad Python de Puebla">
+  <meta property="twitter:description" content="Comunidad oficial de Python en Puebla, México. Aprende, comparte y crece con desarrolladores Python.">
+  <meta property="twitter:image" content="https://pytalavera.github.io/comunidad/assets/images/logo.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/talavera-patterns.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Google Fonts (optional - using system fonts for now) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/language.js" as="script">
+  <link rel="preload" href="js/main.js" as="script">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html" class="site-logo">
+          <img src="assets/images/logo.svg" alt="PyTalavera Logo" width="50" height="50">
+          <span>PyTalavera</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html" class="active" data-lang="es">Inicio</a><a href="index.html" class="active" data-lang="en">Home</a></li>
+            <li><a href="eventos.html" data-lang="es">Eventos</a><a href="eventos.html" data-lang="en">Events</a></li>
+            <li><a href="equipo.html" data-lang="es">Equipo</a><a href="equipo.html" data-lang="en">Team</a></li>
+            <li><a href="patrocinadores.html" data-lang="es">Patrocinadores</a><a href="patrocinadores.html" data-lang="en">Sponsors</a></li>
+            <li><a href="blog.html" data-lang="es">Blog</a><a href="blog.html" data-lang="en">Blog</a></li>
+            <li><a href="codigo-de-conducta.html" data-lang="es">Código de Conducta</a><a href="codigo-de-conducta.html" data-lang="en">Code of Conduct</a></li>
+          </ul>
+        </nav>
+
+        <!-- Language Toggle -->
+        <button id="language-toggle" class="language-toggle" aria-label="Switch language">
+          EN
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay"></div>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html" data-lang="es">Inicio</a><a href="index.html" data-lang="en">Home</a></li>
+      <li><a href="eventos.html" data-lang="es">Eventos</a><a href="eventos.html" data-lang="en">Events</a></li>
+      <li><a href="equipo.html" data-lang="es">Equipo</a><a href="equipo.html" data-lang="en">Team</a></li>
+      <li><a href="patrocinadores.html" data-lang="es">Patrocinadores</a><a href="patrocinadores.html" data-lang="en">Sponsors</a></li>
+      <li><a href="blog.html" data-lang="es">Blog</a><a href="blog.html" data-lang="en">Blog</a></li>
+      <li><a href="codigo-de-conducta.html" data-lang="es">Código de Conducta</a><a href="codigo-de-conducta.html" data-lang="en">Code of Conduct</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero talavera-border-bottom">
+      <div class="container">
+        <div class="hero-content">
+          <img src="assets/images/logo.svg" alt="PyTalavera Logo" class="hero-logo">
+          <h1 class="hero-title">
+            <span data-lang="es">Comunidad Python de Puebla</span>
+            <span data-lang="en">Puebla Python Community</span>
+          </h1>
+          <p class="hero-subtitle">
+            <span data-lang="es">Aprende, comparte y crece con la comunidad Python más vibrante de Puebla</span>
+            <span data-lang="en">Learn, share, and grow with Puebla's most vibrant Python community</span>
+          </p>
+          <div class="hero-cta">
+            <a href="eventos.html" class="btn btn-primary btn-large talavera-btn">
+              <span data-lang="es">Próximos Eventos</span>
+              <span data-lang="en">Upcoming Events</span>
+            </a>
+            <a href="#about" class="btn btn-outline btn-large">
+              <span data-lang="es">Conoce Más</span>
+              <span data-lang="en">Learn More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="talavera-bg">
+      <div class="container container-md">
+        <div class="section-header">
+          <h2>
+            <span data-lang="es">¿Qué es PyTalavera?</span>
+            <span data-lang="en">What is PyTalavera?</span>
+          </h2>
+          <p>
+            <span data-lang="es">Una comunidad inclusiva para desarrolladores Python de todos los niveles</span>
+            <span data-lang="en">An inclusive community for Python developers of all levels</span>
+          </p>
+        </div>
+
+        <div class="lang-es">
+          <p>PyTalavera es la comunidad oficial de Python en Puebla, México. Somos un grupo de desarrolladores, estudiantes y entusiastas apasionados por Python y el desarrollo de software.</p>
+          <p>Nuestro nombre rinde homenaje a la tradicional cerámica Talavera de Puebla, símbolo de nuestra herencia cultural y artesanía. Al igual que cada pieza de Talavera es única y colorida, cada miembro de nuestra comunidad aporta su perspectiva única y valiosa.</p>
+          <p>Organizamos meetups regulares, workshops, hackathons y eventos educativos. Ya seas principiante o experto, ¡hay un lugar para ti en PyTalavera!</p>
+          <p><strong>Nuestros valores:</strong></p>
+          <ul>
+            <li><strong>Inclusión:</strong> Todos son bienvenidos, sin importar su nivel de experiencia</li>
+            <li><strong>Aprendizaje:</strong> Fomentamos el crecimiento continuo y el compartir conocimientos</li>
+            <li><strong>Comunidad:</strong> Construimos conexiones duraderas y apoyamos el crecimiento mutuo</li>
+            <li><strong>Respeto:</strong> Adherimos a nuestro <a href="codigo-de-conducta.html">Código de Conducta</a></li>
+          </ul>
+        </div>
+
+        <div class="lang-en">
+          <p>PyTalavera is the official Python community in Puebla, Mexico. We are a group of developers, students, and enthusiasts passionate about Python and software development.</p>
+          <p>Our name pays homage to Puebla's traditional Talavera pottery, a symbol of our cultural heritage and craftsmanship. Just like each Talavera piece is unique and colorful, each member of our community brings their own unique and valuable perspective.</p>
+          <p>We organize regular meetups, workshops, hackathons, and educational events. Whether you're a beginner or an expert, there's a place for you in PyTalavera!</p>
+          <p><strong>Our values:</strong></p>
+          <ul>
+            <li><strong>Inclusion:</strong> Everyone is welcome, regardless of experience level</li>
+            <li><strong>Learning:</strong> We foster continuous growth and knowledge sharing</li>
+            <li><strong>Community:</strong> We build lasting connections and support mutual growth</li>
+            <li><strong>Respect:</strong> We adhere to our <a href="codigo-de-conducta.html">Code of Conduct</a></li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-xl">
+          <a href="https://forms.google.com/your-contact-form-id" target="_blank" class="btn btn-secondary btn-large">
+            <span data-lang="es">Únete a la Comunidad</span>
+            <span data-lang="en">Join the Community</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="talavera-divider"></div>
+
+    <!-- Events Preview Section -->
+    <section id="events-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>
+            <span data-lang="es">Próximos Eventos</span>
+            <span data-lang="en">Upcoming Events</span>
+          </h2>
+          <p>
+            <span data-lang="es">Únete a nosotros en nuestros próximos meetups y workshops</span>
+            <span data-lang="en">Join us at our upcoming meetups and workshops</span>
+          </p>
+        </div>
+
+        <!-- Placeholder for Luma events -->
+        <div id="events-container" class="grid grid-cols-1 grid-md-3">
+          <!-- Event cards will be dynamically loaded from Luma -->
+          <!-- Placeholder cards -->
+          <div class="card event-card talavera-card">
+            <div class="card-header">
+              <span class="badge" style="background-color: var(--color-secondary); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">
+                <span data-lang="es">Próximamente</span>
+                <span data-lang="en">Coming Soon</span>
+              </span>
+              <h3 class="card-title">
+                <span data-lang="es">Meetup Mensual de Python</span>
+                <span data-lang="en">Monthly Python Meetup</span>
+              </h3>
+              <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">
+                <span data-lang="es">📅 Por confirmar</span>
+                <span data-lang="en">📅 To be confirmed</span>
+              </p>
+            </div>
+            <div class="card-body">
+              <p data-lang="es">Únete a nuestro meetup mensual para charlas, networking y aprendizaje sobre Python.</p>
+              <p data-lang="en">Join our monthly meetup for talks, networking, and learning about Python.</p>
+            </div>
+            <div class="card-footer">
+              <a href="eventos.html" class="btn btn-primary btn-small">
+                <span data-lang="es">Ver Detalles</span>
+                <span data-lang="en">View Details</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="card event-card talavera-card">
+            <div class="card-header">
+              <span class="badge" style="background-color: var(--forest-green); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">Workshop</span>
+              <h3 class="card-title">
+                <span data-lang="es">Introducción a Python</span>
+                <span data-lang="en">Introduction to Python</span>
+              </h3>
+              <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">
+                <span data-lang="es">📅 Por confirmar</span>
+                <span data-lang="en">📅 To be confirmed</span>
+              </p>
+            </div>
+            <div class="card-body">
+              <p data-lang="es">Workshop para principiantes. Aprende los fundamentos de Python desde cero.</p>
+              <p data-lang="en">Workshop for beginners. Learn Python fundamentals from scratch.</p>
+            </div>
+            <div class="card-footer">
+              <a href="eventos.html" class="btn btn-primary btn-small">
+                <span data-lang="es">Ver Detalles</span>
+                <span data-lang="en">View Details</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="card event-card talavera-card">
+            <div class="card-header">
+              <span class="badge" style="background-color: var(--mauve); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">Hackathon</span>
+              <h3 class="card-title">
+                <span data-lang="es">Hackathon PyTalavera</span>
+                <span data-lang="en">PyTalavera Hackathon</span>
+              </h3>
+              <p style="color: var(--color-text-light); font-size: var(--font-size-sm);">
+                <span data-lang="es">📅 Por confirmar</span>
+                <span data-lang="en">📅 To be confirmed</span>
+              </p>
+            </div>
+            <div class="card-body">
+              <p data-lang="es">Desarrolla proyectos increíbles con otros miembros de la comunidad.</p>
+              <p data-lang="en">Build amazing projects with other community members.</p>
+            </div>
+            <div class="card-footer">
+              <a href="eventos.html" class="btn btn-primary btn-small">
+                <span data-lang="es">Ver Detalles</span>
+                <span data-lang="en">View Details</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-xl">
+          <a href="eventos.html" class="btn btn-outline btn-large">
+            <span data-lang="es">Ver Todos los Eventos</span>
+            <span data-lang="en">View All Events</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="talavera-divider"></div>
+
+    <!-- Instagram Section -->
+    <section id="instagram" class="talavera-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>
+            <span data-lang="es">Síguenos en Instagram</span>
+            <span data-lang="en">Follow Us on Instagram</span>
+          </h2>
+          <p>
+            <span data-lang="es">Comparte tus momentos con #PyTalavera</span>
+            <span data-lang="en">Share your moments with #PyTalavera</span>
+          </p>
+        </div>
+
+        <!-- Instagram Feed -->
+        <div id="instagram-feed">
+          <!-- Placeholder: Instagram widget will be integrated here -->
+          <div class="instagram-grid">
+            <div class="instagram-item">
+              <div style="background: linear-gradient(135deg, var(--cobalt-blue) 0%, var(--burnt-orange) 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; border-radius: var(--radius-md);">📷</div>
+            </div>
+            <div class="instagram-item tablet-up">
+              <div style="background: linear-gradient(135deg, var(--mauve) 0%, var(--forest-green) 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; border-radius: var(--radius-md);">🐍</div>
+            </div>
+            <div class="instagram-item desktop-up">
+              <div style="background: linear-gradient(135deg, var(--warm-yellow) 0%, var(--burnt-orange) 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; border-radius: var(--radius-md);">💻</div>
+            </div>
+          </div>
+
+          <p class="text-center mt-lg" style="color: var(--color-text-light);">
+            <span data-lang="es">📸 Galería de Instagram próximamente</span>
+            <span data-lang="en">📸 Instagram gallery coming soon</span>
+          </p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <a href="https://instagram.com/pytalavera" target="_blank" class="btn btn-secondary btn-large">
+            <span data-lang="es">Síguenos en Instagram</span>
+            <span data-lang="en">Follow Us on Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors">
+      <div class="container">
+        <div class="section-header">
+          <h2>
+            <span data-lang="es">Nuestros Patrocinadores</span>
+            <span data-lang="en">Our Sponsors</span>
+          </h2>
+          <p>
+            <span data-lang="es">Gracias a quienes hacen posible PyTalavera</span>
+            <span data-lang="en">Thanks to those who make PyTalavera possible</span>
+          </p>
+        </div>
+
+        <!-- Placeholder for sponsors -->
+        <div class="text-center" style="padding: var(--spacing-3xl) 0;">
+          <p style="color: var(--color-text-light); font-size: var(--font-size-lg); margin-bottom: var(--spacing-xl);">
+            <span data-lang="es">🤝 Próximamente nuestros patrocinadores</span>
+            <span data-lang="en">🤝 Our sponsors coming soon</span>
+          </p>
+          <a href="patrocinadores.html" class="btn btn-outline">
+            <span data-lang="es">Conviértete en Patrocinador</span>
+            <span data-lang="en">Become a Sponsor</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="talavera-bg" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);">
+      <div class="container container-md text-center">
+        <h2 class="mb-lg">
+          <span data-lang="es">¿Listo para unirte?</span>
+          <span data-lang="en">Ready to join?</span>
+        </h2>
+        <p class="mb-xl" style="font-size: var(--font-size-lg); color: var(--color-text-light);">
+          <span data-lang="es">Únete a nuestra comunidad en WhatsApp, síguenos en redes sociales, y asiste a nuestros eventos.</span>
+          <span data-lang="en">Join our WhatsApp community, follow us on social media, and attend our events.</span>
+        </p>
+
+        <div class="grid grid-cols-1 grid-md-2 grid-lg-4" style="gap: var(--spacing-md);">
+          <a href="https://whatsapp.com/channel/your-channel" target="_blank" class="btn btn-primary">
+            <span data-lang="es">WhatsApp</span>
+            <span data-lang="en">WhatsApp</span>
+          </a>
+          <a href="https://linkedin.com/company/pytalavera" target="_blank" class="btn btn-primary">LinkedIn</a>
+          <a href="https://lu.ma/pytalavera" target="_blank" class="btn btn-primary">Luma</a>
+          <a href="https://youtube.com/@pytalavera" target="_blank" class="btn btn-primary">YouTube</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- About Column -->
+        <div class="footer-section">
+          <h3>PyTalavera</h3>
+          <p data-lang="es">Comunidad Python de Puebla, México.</p>
+          <p data-lang="en">Python Community in Puebla, Mexico.</p>
+          <div class="social-links mt-md">
+            <a href="https://instagram.com/pytalavera" target="_blank" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/pytalavera" target="_blank" class="social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://youtube.com/@pytalavera" target="_blank" class="social-link" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Column -->
+        <div class="footer-section">
+          <h3 data-lang="es">Enlaces</h3>
+          <h3 data-lang="en">Links</h3>
+          <a href="index.html" data-lang="es">Inicio</a>
+          <a href="index.html" data-lang="en">Home</a>
+          <a href="eventos.html" data-lang="es">Eventos</a>
+          <a href="eventos.html" data-lang="en">Events</a>
+          <a href="equipo.html" data-lang="es">Equipo</a>
+          <a href="equipo.html" data-lang="en">Team</a>
+          <a href="blog.html" data-lang="es">Blog</a>
+          <a href="blog.html" data-lang="en">Blog</a>
+        </div>
+
+        <!-- Community Column -->
+        <div class="footer-section">
+          <h3 data-lang="es">Comunidad</h3>
+          <h3 data-lang="en">Community</h3>
+          <a href="codigo-de-conducta.html" data-lang="es">Código de Conducta</a>
+          <a href="codigo-de-conducta.html" data-lang="en">Code of Conduct</a>
+          <a href="patrocinadores.html" data-lang="es">Patrocinadores</a>
+          <a href="patrocinadores.html" data-lang="en">Sponsors</a>
+          <a href="https://forms.google.com/your-speaker-form" target="_blank" data-lang="es">Proponer Charla</a>
+          <a href="https://forms.google.com/your-speaker-form" target="_blank" data-lang="en">Propose a Talk</a>
+          <a href="https://forms.google.com/your-contact-form" target="_blank" data-lang="es">Contacto</a>
+          <a href="https://forms.google.com/your-contact-form" target="_blank" data-lang="en">Contact</a>
+        </div>
+
+        <!-- Connect Column -->
+        <div class="footer-section">
+          <h3 data-lang="es">Conéctate</h3>
+          <h3 data-lang="en">Connect</h3>
+          <a href="https://whatsapp.com/channel/your-channel" target="_blank">WhatsApp</a>
+          <a href="https://lu.ma/pytalavera" target="_blank">Luma</a>
+          <a href="https://github.com/pytalavera" target="_blank">GitHub</a>
+          <a href="mailto:pytalavera@gmail.com">pytalavera@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-lang="es">© 2026 PyTalavera. Hecho con 💙 y 🐍 en Puebla, México. Todos los derechos reservados.</p>
+        <p data-lang="en">© 2026 PyTalavera. Made with 💙 and 🐍 in Puebla, Mexico. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/language.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Instagram Feed (optional - add when ready) -->
+  <!-- <script type="module" src="https://unpkg.com/@nocodeapi/embed-instagram-feed@latest/embed-instagram-feed.js"></script> -->
+
+  <!-- Luma Events (optional - add when ready) -->
+  <!-- <script src="https://embed.lu.ma/checkout-button.js"></script> -->
+</body>
+</html>

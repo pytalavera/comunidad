@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Corner ornament inspired by Talavera tiles -->
+  <g>
+    <!-- Outer circle -->
+    <circle cx="30" cy="30" r="25" fill="none" stroke="#1E3A8A" stroke-width="2"/>
+
+    <!-- Inner decorative petals -->
+    <path d="M 30 10 Q 20 20, 30 30 Q 40 20, 30 10" fill="#D97706"/>
+    <path d="M 50 30 Q 40 20, 30 30 Q 40 40, 50 30" fill="#D97706"/>
+    <path d="M 30 50 Q 40 40, 30 30 Q 20 40, 30 50" fill="#7C3AED"/>
+    <path d="M 10 30 Q 20 40, 30 30 Q 20 20, 10 30" fill="#7C3AED"/>
+
+    <!-- Center dot -->
+    <circle cx="30" cy="30" r="5" fill="#1E3A8A"/>
+    <circle cx="30" cy="30" r="3" fill="#F59E0B"/>
+
+    <!-- Small accent dots around -->
+    <circle cx="30" cy="12" r="2" fill="#059669"/>
+    <circle cx="48" cy="30" r="2" fill="#059669"/>
+    <circle cx="30" cy="48" r="2" fill="#059669"/>
+    <circle cx="12" cy="30" r="2" fill="#059669"/>
+  </g>
+</svg>

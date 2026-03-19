@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 20" preserveAspectRatio="none">
+  <!-- Decorative section divider -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1E3A8A;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main line -->
+  <line x1="0" y1="10" x2="400" y2="10" stroke="url(#grad1)" stroke-width="2"/>
+
+  <!-- Center ornament -->
+  <circle cx="200" cy="10" r="8" fill="#D97706"/>
+  <circle cx="200" cy="10" r="5" fill="#FFFFFF"/>
+  <circle cx="200" cy="10" r="3" fill="#1E3A8A"/>
+
+  <!-- Side accent dots -->
+  <circle cx="150" cy="10" r="3" fill="#7C3AED"/>
+  <circle cx="250" cy="10" r="3" fill="#7C3AED"/>
+  <circle cx="120" cy="10" r="2" fill="#F59E0B"/>
+  <circle cx="280" cy="10" r="2" fill="#F59E0B"/>
+</svg>
