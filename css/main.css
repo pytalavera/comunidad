@@ -718,11 +718,15 @@ section:nth-child(even) {
 }
 
 .hero-logo {
-  width: 250px;
-  height: auto;
+  width: 200px;
+  height: 200px;
   margin: 0 auto var(--spacing-lg);
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  background-color: white;
+  border-radius: 50%;
+  padding: var(--spacing-2xl);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   animation: float 6s ease-in-out infinite;
+  object-fit: contain;
 }
 
 @keyframes float {
