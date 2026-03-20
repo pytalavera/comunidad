@@ -718,8 +718,8 @@ section:nth-child(even) {
 }
 
 .hero-logo {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   margin: 0 auto var(--spacing-lg);
   background-color: white;
   border-radius: 50%;
@@ -728,12 +728,14 @@ section:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: var(--spacing-lg);
 }
 
 .hero-logo img {
-  width: 250px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
+  object-fit: contain;
 }
 
 @keyframes float {
