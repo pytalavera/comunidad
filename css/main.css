@@ -728,7 +728,7 @@ section:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
 }
 
 .hero-logo img {
