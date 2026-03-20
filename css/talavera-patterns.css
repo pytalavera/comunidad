@@ -385,18 +385,6 @@
   position: relative;
 }
 
-.section-header::after {
-  content: '';
-  display: block;
-  width: 200px;
-  height: 20px;
-  margin: var(--spacing-lg) auto 0;
-  background-image: url('../assets/images/talavera-patterns/divider.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .section-header h2 {
   margin-bottom: var(--spacing-sm);
 }
