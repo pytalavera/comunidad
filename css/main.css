@@ -738,21 +738,7 @@ section:nth-child(even) {
   font-weight: var(--font-weight-black);
   letter-spacing: -0.02em;
   margin-bottom: var(--spacing-md);
-  background: var(--gradient-rainbow);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 8s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  color: var(--color-primary);
 }
 
 .hero-subtitle {
