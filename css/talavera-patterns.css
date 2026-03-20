@@ -77,18 +77,8 @@
   height: 60px;
 }
 
-/* Talavera Divider
+/* Talavera Divider - Removed per user preference
    ========================================================================== */
-.talavera-divider {
-  width: 100%;
-  max-width: 400px;
-  height: 20px;
-  margin: var(--spacing-2xl) auto;
-  background-image: url('../assets/images/talavera-patterns/divider.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
 /* Section with Talavera Background
    ========================================================================== */
