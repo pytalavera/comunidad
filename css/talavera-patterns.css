@@ -106,9 +106,19 @@
   bottom: 0;
   background-image: url('../assets/images/talavera-patterns/background-pattern.svg');
   background-repeat: repeat;
-  background-size: 100px 100px;
-  opacity: 0.05;
+  background-size: 200px 200px;
+  opacity: 0.15;
   z-index: 0;
+  animation: pattern-drift 120s linear infinite;
+}
+
+@keyframes pattern-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
 }
 
 .talavera-bg > * {
@@ -129,12 +139,13 @@
   position: absolute;
   top: -5px;
   left: -5px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-image: url('../assets/images/talavera-patterns/corner-ornament.svg');
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 2;
+  transition: transform var(--transition-smooth);
 }
 
 .card.talavera-card::after {
@@ -142,13 +153,22 @@
   position: absolute;
   bottom: -5px;
   right: -5px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-image: url('../assets/images/talavera-patterns/corner-ornament.svg');
   background-size: contain;
   background-repeat: no-repeat;
   transform: rotate(180deg);
   z-index: 2;
+  transition: transform var(--transition-smooth);
+}
+
+.card.talavera-card:hover::before {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.card.talavera-card:hover::after {
+  transform: rotate(180deg) scale(1.1) rotate(-5deg);
 }
 
 /* Talavera Button Hover Effect
@@ -420,19 +440,20 @@
   right: 0;
   bottom: 0;
   background-image: url('../assets/images/talavera-patterns/background-pattern.svg');
-  background-size: 80px 80px;
+  background-size: 150px 150px;
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity var(--transition-smooth);
   z-index: 1;
   pointer-events: none;
+  mix-blend-mode: overlay;
 }
 
 .instagram-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .instagram-item:hover::before {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 /* Talavera-Styled Form Elements

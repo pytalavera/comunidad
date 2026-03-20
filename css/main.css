@@ -46,14 +46,16 @@
   --font-size-base: clamp(1rem, 2vw, 1.125rem);
   --font-size-lg: clamp(1.125rem, 2.25vw, 1.25rem);
   --font-size-xl: clamp(1.25rem, 2.5vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 3vw, 2rem);
-  --font-size-3xl: clamp(2rem, 4vw, 2.5rem);
-  --font-size-4xl: clamp(2.5rem, 5vw, 3.5rem);
+  --font-size-2xl: clamp(1.75rem, 4vw, 3rem);
+  --font-size-3xl: clamp(2.25rem, 6vw, 4rem);
+  --font-size-4xl: clamp(3rem, 8vw, 6rem);
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
@@ -68,6 +70,8 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
   --spacing-4xl: 6rem;
+  --spacing-5xl: 8rem;
+  --spacing-6xl: 12rem;
 
   /* Layout */
   --max-width-sm: 640px;
@@ -81,18 +85,50 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --shadow-glow: 0 0 40px rgba(217, 119, 6, 0.3);
+  --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-elevation-4: 0 16px 48px rgba(0, 0, 0, 0.16);
 
   /* Border Radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
   --radius-full: 9999px;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--cobalt-blue) 0%, var(--mauve) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--burnt-orange) 0%, var(--warm-yellow) 100%);
+  --gradient-rainbow: linear-gradient(
+    90deg,
+    var(--cobalt-blue) 0%,
+    var(--mauve) 20%,
+    var(--burnt-orange) 40%,
+    var(--warm-yellow) 60%,
+    var(--forest-green) 80%,
+    var(--cobalt-blue) 100%
+  );
+  --gradient-mesh: radial-gradient(at 0% 0%, var(--cobalt-blue) 0%, transparent 50%),
+                   radial-gradient(at 100% 0%, var(--mauve) 0%, transparent 50%),
+                   radial-gradient(at 100% 100%, var(--burnt-orange) 0%, transparent 50%),
+                   radial-gradient(at 0% 100%, var(--forest-green) 0%, transparent 50%);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(10px);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
   --transition-base: 250ms ease-in-out;
   --transition-slow: 350ms ease-in-out;
+  --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* CSS Reset & Base Styles
@@ -436,16 +472,18 @@ section:nth-child(even) {
 .btn {
   display: inline-block;
   font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   text-decoration: none;
-  padding: var(--spacing-md) var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  border: 2px solid transparent;
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  border: none;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: all var(--transition-smooth);
   min-width: 120px;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:focus {
@@ -454,38 +492,88 @@ section:nth-child(even) {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: var(--gradient-primary);
   color: var(--white);
-  border-color: var(--color-primary);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--transition-smooth);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background-color: var(--white);
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-elevation-3), var(--shadow-glow);
+  color: var(--white);
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
+  background: var(--gradient-secondary);
   color: var(--white);
-  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--transition-smooth);
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
 }
 
 .btn-secondary:hover {
-  background-color: var(--white);
-  color: var(--color-secondary);
-  border-color: var(--color-secondary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-elevation-3), var(--shadow-glow);
+  color: var(--white);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
   color: var(--color-primary);
-  border-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.btn-outline:hover::before {
+  left: 0;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-primary);
   color: var(--white);
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-elevation-3);
 }
 
 .btn-large {
@@ -502,18 +590,46 @@ section:nth-child(even) {
 /* Card Component
    ========================================================================== */
 .card {
-  background-color: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: var(--spacing-xl);
-  transition: all var(--transition-base);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
 }
 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-rainbow);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-elevation-4), var(--shadow-glow);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* 3D tilt effect on cards */
+.card-tilt {
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(5deg) translateY(-8px);
 }
 
 .card-header {
@@ -561,7 +677,11 @@ section:nth-child(even) {
 /* Hero Section
    ========================================================================== */
 .hero {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-mesh);
   padding: var(--spacing-4xl) 0;
   text-align: center;
   position: relative;
@@ -571,13 +691,24 @@ section:nth-child(even) {
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   background-image: url('../assets/images/talavera-patterns/background-pattern.svg');
-  opacity: 0.3;
+  background-size: 200px 200px;
+  opacity: 0.15;
+  animation: pattern-float 60s linear infinite;
   z-index: 0;
+}
+
+@keyframes pattern-float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(50px, 50px) rotate(360deg);
+  }
 }
 
 .hero-content {
@@ -586,15 +717,42 @@ section:nth-child(even) {
 }
 
 .hero-logo {
-  width: 150px;
+  width: 250px;
   height: auto;
   margin: 0 auto var(--spacing-lg);
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-title {
   font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
   margin-bottom: var(--spacing-md);
-  color: var(--color-primary);
+  background: var(--gradient-rainbow);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-subtitle {
@@ -773,7 +931,7 @@ img {
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -782,7 +940,28 @@ img {
 }
 
 .fade-in {
-  animation: fade-in var(--transition-slow) ease-out;
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-logo,
+  .hero::before {
+    animation: none !important;
+  }
 }
 
 /* Focus Visible Support
