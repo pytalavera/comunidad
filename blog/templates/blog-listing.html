@@ -84,26 +84,7 @@
     <!-- Blog Posts -->
     <section>
       <div class="container">
-        
-        <!-- Featured Post -->
-        <div class="card blog-post-card" style="margin-bottom: var(--spacing-3xl); border: 2px solid var(--color-primary);">
-          <span class="badge" style="background-color: var(--color-secondary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: var(--font-size-sm); display: inline-block; margin-bottom: var(--spacing-md);">
-            <span data-lang="es">✨ Destacado</span>
-            <span data-lang="en">✨ Featured</span>
-          </span>
-          <h2 style="margin-bottom: var(--spacing-sm);">¡Bienvenidos a PyTalavera!</h2>
-          <p style="color: var(--color-text-light); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">
-            19 de marzo de 2026 • Equipo PyTalavera
-          </p>
-          <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">
-            Estamos emocionados de lanzar PyTalavera, la comunidad oficial de Python en Puebla. Descubre quiénes somos, qué hacemos y cómo puedes ser parte de esta increíble comunidad.
-          </p>
-          <a href="blog/posts/bienvenidos-pytalavera.html" class="btn btn-primary">
-            <span data-lang="es">Leer Más</span>
-            <span data-lang="en">Read More</span>
-          </a>
-        </div>
-
+        {{FEATURED_POST_SECTION}}
 
         <!-- Blog Grid -->
         <div class="section-header">
@@ -114,26 +95,7 @@
         </div>
 
         <div class="blog-grid grid grid-cols-1 grid-md-2 grid-lg-3">
-          
-          <article class="card blog-post-card">
-            <div style="margin-bottom: var(--spacing-sm);">
-              <span class="badge" style="background-color: var(--forest-green); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); font-size: var(--font-size-xs);">
-                Community
-              </span>
-            </div>
-            <h3 style="margin-bottom: var(--spacing-sm);">¡Bienvenidos a PyTalavera!</h3>
-            <p style="color: var(--color-text-light); font-size: var(--font-size-sm); margin-bottom: var(--spacing-md);">
-              19 de marzo de 2026 • Equipo PyTalavera
-            </p>
-            <p style="color: var(--color-text-light); margin-bottom: var(--spacing-lg);">
-              Estamos emocionados de lanzar PyTalavera, la comunidad oficial de Python en Puebla. Descubre quiénes somos, qué hacemos y cómo puedes ser parte de esta increíble comunidad.
-            </p>
-            <a href="blog/posts/bienvenidos-pytalavera.html" class="btn btn-outline btn-small">
-              <span data-lang="es">Leer</span>
-              <span data-lang="en">Read</span>
-            </a>
-          </article>
-
+          {{POSTS_HTML}}
         </div>
       </div>
     </section>

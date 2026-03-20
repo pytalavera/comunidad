@@ -975,3 +975,191 @@ img {
     text-decoration: underline;
   }
 }
+
+/* Blog Post Content Styling
+   ========================================================================== */
+.post-content {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+.post-content h1 {
+  font-size: var(--font-size-3xl);
+}
+
+.post-content h2 {
+  font-size: var(--font-size-2xl);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
+.post-content h3 {
+  font-size: var(--font-size-xl);
+}
+
+.post-content h4 {
+  font-size: var(--font-size-lg);
+}
+
+.post-content p {
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: var(--spacing-lg);
+  padding-left: var(--spacing-2xl);
+}
+
+.post-content ul {
+  list-style-type: disc;
+}
+
+.post-content ol {
+  list-style-type: decimal;
+}
+
+.post-content li {
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.post-content li ul,
+.post-content li ol {
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.post-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.post-content a:hover {
+  color: var(--color-secondary);
+}
+
+.post-content code {
+  background-color: var(--gray-100);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+  color: var(--color-accent);
+}
+
+.post-content pre {
+  background-color: var(--gray-900);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-xl) 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  font-style: italic;
+  color: var(--color-text-light);
+  background-color: var(--gray-50);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.post-content blockquote p {
+  margin-bottom: 0;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 2px solid var(--color-border);
+  margin: var(--spacing-2xl) 0;
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-xl) 0;
+  font-size: var(--font-size-base);
+}
+
+.post-content table thead {
+  background-color: var(--gray-100);
+}
+
+.post-content table th,
+.post-content table td {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.post-content table th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.post-content table tr:nth-child(even) {
+  background-color: var(--gray-50);
+}
+
+.post-content strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.post-content em {
+  font-style: italic;
+}
+
+/* Blog Post Card Styling
+   ========================================================================== */
+.blog-post-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.blog-post-card .btn {
+  margin-top: auto;
+}
