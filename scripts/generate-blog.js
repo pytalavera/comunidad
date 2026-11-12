@@ -8,14 +8,14 @@ const POSTS_DIR = './blog/posts';
 const TEMPLATES_DIR = './blog/templates';
 const OUTPUT_BLOG_HTML = './blog.html';
 
-// Category color mapping (using Talavera colors)
+// Category badge mapping (sistema de marca PyTalavera: clases .badge-azul / .badge-amarillo / .badge-tinta)
 const CATEGORY_COLORS = {
-  'Tutorial': 'mauve',
-  'Event': 'burnt-orange',
-  'Article': 'cobalt-blue',
-  'Community': 'forest-green',
-  'Workshop': 'forest-green',
-  'Debate': 'mauve'
+  'Tutorial': 'tinta',
+  'Event': 'azul',
+  'Article': 'azul',
+  'Community': 'amarillo',
+  'Workshop': 'amarillo',
+  'Debate': 'tinta'
 };
 
 console.log('🚀 Starting blog generation...\n');
@@ -68,7 +68,7 @@ const posts = mdFiles.map(filePath => {
     category: data.category || 'Article',
     tags: data.tags || [],
     featured: data.featured || false,
-    categoryColor: CATEGORY_COLORS[data.category] || 'cobalt-blue'
+    categoryColor: CATEGORY_COLORS[data.category] || 'azul'
   };
 }).sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
 
@@ -104,7 +104,7 @@ if (featuredPost) {
   featuredPostSection = `
         <!-- Featured Post -->
         <div class="card blog-post-card" style="margin-bottom: var(--spacing-3xl); border: 2px solid var(--color-primary);">
-          <span class="badge" style="background-color: var(--color-secondary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: var(--font-size-sm); display: inline-block; margin-bottom: var(--spacing-md);">
+          <span class="badge badge-amarillo" style="margin-bottom: var(--spacing-md);">
             <span data-lang="es">✨ Destacado</span>
             <span data-lang="en">✨ Featured</span>
           </span>
@@ -130,7 +130,7 @@ console.log('🎨 Generating blog listing page...');
 const postsHtml = posts.map(post => `
           <article class="card blog-post-card">
             <div style="margin-bottom: var(--spacing-sm);">
-              <span class="badge" style="background-color: var(--${post.categoryColor}); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); font-size: var(--font-size-xs);">
+              <span class="badge badge-${post.categoryColor}">
                 ${escapeHtml(post.category)}
               </span>
             </div>

@@ -1,0 +1,20 @@
+:root {
+  --pt-amarillo: #FFCC00;
+  --pt-azul: #0232AF;
+  --pt-azul-brillante: #1D40D9;
+  --pt-negro: #000000;
+  --pt-blanco: #FFFFFF;
+  --pt-tinta: #0B1640;   /* aprobado */
+  --pt-crema: #FFF8E6;   /* aprobado */
+  --pt-font-display: "Literata", Georgia, serif;   /* italic 700, opsz 48 */
+  --pt-font-body: "Inter", system-ui, sans-serif;
+  --pt-font-code: "JetBrains Mono", ui-monospace, monospace;
+  --pt-radius-pill: 9999px;
+  --pt-radius-card: 16px;
+  /* Logo: el sello completo (logo1.svg) se usa en todos los tamaños, también como favicon.
+     Sobre azul: versión a una tinta en blanco. Tamaño mínimo recomendado, no obligatorio:
+     isotipo 32px, horizontal 160px, vertical 80px. Favicon oficial: sello completo sobre disco blanco circular, en brand/favicon-oficial/. */
+  --pt-logo-min-isotipo: 32px;    /* recomendado */
+  --pt-logo-min-horizontal: 160px; /* recomendado */
+  --pt-logo-min-vertical: 80px;    /* recomendado */
+}

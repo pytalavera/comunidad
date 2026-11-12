@@ -1,4 +1,4 @@
-# PyTalavera - Comunidad Python de Puebla
+# PyTalavera · Comunidad Pythonista en Puebla
 
 Official website for PyTalavera, the Python community in Puebla, Mexico.
 
@@ -31,6 +31,7 @@ PyTalavera is a bilingual (Spanish/English) community website featuring traditio
 /comunidad/
 ├── index.html                     # Homepage
 ├── css/
+│   ├── tokens.css                # Tokens de marca (fuente de verdad)
 │   ├── main.css                  # Core design system
 │   ├── talavera-patterns.css    # Decorative elements
 │   └── responsive.css            # Mobile-first responsive
@@ -39,7 +40,9 @@ PyTalavera is a bilingual (Spanish/English) community website featuring traditio
 │   └── language.js               # Bilingual toggle
 ├── assets/
 │   ├── images/
-│   │   ├── logo.svg              # PyTalavera logo
+│   │   ├── logo.svg              # Sello (copia de logos/logo1.svg, se conserva por compatibilidad)
+│   │   ├── logos/                # Logos oficiales y versiones a una tinta
+│   │   ├── favicon/              # Favicon oficial (.ico, .svg, PNG 16–512, apple-touch-icon)
 │   │   ├── talavera-patterns/    # SVG decorative patterns
 │   │   ├── team/                 # Team member photos
 │   │   └── sponsors/             # Sponsor logos
@@ -50,19 +53,30 @@ PyTalavera is a bilingual (Spanish/English) community website featuring traditio
 
 ## 🎨 Design System
 
-### Talavera Color Palette
-Based on traditional Puebla Talavera pottery:
+### Sistema de marca PyTalavera
+La fuente de verdad son `css/tokens.css` y `assets/brand/tokens.json`. Los textos oficiales están en `assets/brand/descripciones-oficiales.md`.
 
-- **Cobalt Blue** (#1E3A8A) - Primary brand color
-- **Burnt Orange** (#D97706) - CTAs and accents
-- **Mauve/Purple** (#7C3AED) - Secondary accents
-- **Forest Green** (#059669) - Success states
-- **Warm Yellow** (#F59E0B) - Highlights
-- **White** (#FFFFFF) - Backgrounds
-- **Rich Black** (#1F2937) - Typography
+**Paleta del sello**
+- **Amarillo** `#FFCC00` — acentos y decoración. Nunca como texto sobre blanco (1.51:1); sí sobre azul (6.68:1) o tinta (11.55:1).
+- **Azul Talavera** `#0232AF` — color principal (10.11:1 sobre blanco).
+- **Azul brillante** `#1D40D9` — hover y acentos (7.53:1 sobre blanco).
+
+**Neutros**
+- **Tinta** `#0B1640` — texto y pie de página.
+- **Crema** `#FFF8E6` — fondos alternos.
+- **Blanco** `#FFFFFF`.
+
+**Logos** (`assets/images/logos/`)
+- `logo1.svg` isotipo a color (el sello completo), `logo2.svg` isotipo negro, `logo3.svg` lockup vertical, `logo4.svg` lockup horizontal.
+- `una-tinta/` versiones a una tinta (blanco, negro, tinta). Sobre fondos azules va la versión a una tinta en blanco.
+- Nunca se recolorea el sello y se usa completo en todos los tamaños (no hay isotipo simplificado).
+- Favicon oficial: sello completo sobre disco blanco, en `assets/images/favicon/`.
+
+**Patrón Talavera**: `assets/images/talavera-patterns/patron-talavera-tile-azul.svg` y `patron-talavera-tile-crema.svg`.
 
 ### Typography
-- **Headings**: Montserrat (bold, geometric)
+- **Titulares**: Literata Italic 700 (Google Fonts)
+- **Código**: JetBrains Mono
 - **Body**: Inter (clean, readable)
 - **Fluid sizing**: Uses `clamp()` for responsive typography
 

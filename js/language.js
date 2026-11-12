@@ -101,6 +101,11 @@
   function getDisplayType(element) {
     const tagName = element.tagName.toLowerCase();
 
+    // Footer links are stacked (one per line)
+    if (tagName === 'a' && element.closest('.footer-section')) {
+      return 'block';
+    }
+
     // Inline elements
     if (['span', 'a', 'strong', 'em', 'b', 'i', 'small'].includes(tagName)) {
       return 'inline';

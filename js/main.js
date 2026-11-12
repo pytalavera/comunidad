@@ -483,9 +483,9 @@
    * Console Welcome Message
    */
   function showWelcomeMessage() {
-    console.log('%c¡Bienvenido a PyTalavera! 🐍', 'color: #1E3A8A; font-size: 20px; font-weight: bold;');
-    console.log('%cComunidad Python de Puebla', 'color: #D97706; font-size: 14px;');
-    console.log('%cContributing? Check out our GitHub! https://github.com/pytalavera', 'color: #7C3AED; font-size: 12px;');
+    console.log('%c¡Bienvenido a PyTalavera! 🐍', 'color: #0232AF; font-size: 20px; font-weight: bold;');
+    console.log('%cComunidad Pythonista en Puebla', 'color: #0B1640; font-size: 14px;');
+    console.log('%cContributing? Check out our GitHub! https://github.com/pytalavera', 'color: #1D40D9; font-size: 12px;');
   }
 
   // Initialize on DOM ready

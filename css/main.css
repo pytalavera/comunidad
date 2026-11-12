@@ -1,63 +1,70 @@
 /* ==========================================================================
    PyTalavera - Main Stylesheet
-   Design system based on traditional Talavera pottery colors
+   Sistema de marca PyTalavera · Comunidad Pythonista en Puebla
    ========================================================================== */
 
 /* CSS Variables - Talavera Color Palette
    ========================================================================== */
+/* CSS Variables - Sistema de marca PyTalavera
+   La fuente de verdad son los tokens de marca (css/tokens.css y
+   assets/brand/tokens.json): paleta del sello #FFCC00 / #0232AF / #1D40D9,
+   neutros tinta #0B1640, crema #FFF8E6 y blanco.
+   Reglas: nunca recolorear el sello; nunca texto amarillo sobre blanco;
+   sobre fondos azules se usa el logo a una tinta en blanco.
+   ========================================================================== */
 :root {
-  /* Primary Colors */
-  --cobalt-blue: #1E3A8A;
-  --white: #FFFFFF;
-  --burnt-orange: #D97706;
+  /* Paleta de marca (alias de css/tokens.css; se repiten como respaldo) */
+  --pt-amarillo: #FFCC00;
+  --pt-azul: #0232AF;
+  --pt-azul-brillante: #1D40D9;
+  --pt-tinta: #0B1640;
+  --pt-crema: #FFF8E6;
+  --pt-blanco: #FFFFFF;
 
-  /* Secondary Colors */
-  --mauve: #7C3AED;
-  --forest-green: #059669;
-  --warm-yellow: #F59E0B;
-  --rich-black: #1F2937;
+  --white: var(--pt-blanco);
 
-  /* Neutral Shades */
-  --gray-50: #F9FAFB;
-  --gray-100: #F3F4F6;
-  --gray-200: #E5E7EB;
-  --gray-300: #D1D5DB;
-  --gray-600: #4B5563;
-  --gray-700: #374151;
-  --gray-900: #111827;
+  /* Neutros derivados de tinta y crema (solo matices de la paleta aprobada) */
+  --gray-50: var(--pt-crema);
+  --gray-100: color-mix(in srgb, var(--pt-tinta) 6%, var(--pt-crema));
+  --gray-200: color-mix(in srgb, var(--pt-tinta) 14%, var(--pt-blanco));
+  --gray-300: color-mix(in srgb, var(--pt-crema) 82%, var(--pt-tinta));
+  --gray-600: color-mix(in srgb, var(--pt-tinta) 80%, var(--pt-blanco));
+  --gray-700: color-mix(in srgb, var(--pt-tinta) 75%, var(--pt-blanco));
+  --gray-900: var(--pt-tinta);
 
   /* Semantic Colors */
-  --color-primary: var(--cobalt-blue);
-  --color-secondary: var(--burnt-orange);
-  --color-accent: var(--mauve);
-  --color-success: var(--forest-green);
-  --color-warning: var(--warm-yellow);
-  --color-text: var(--rich-black);
+  --color-primary: var(--pt-azul);
+  --color-secondary: var(--pt-azul-brillante);
+  --color-accent: var(--pt-amarillo);      /* solo decorativo o sobre azul/tinta, nunca texto sobre blanco */
+  --color-code: var(--pt-azul-brillante);
+  --color-text: var(--pt-tinta);
   --color-text-light: var(--gray-600);
   --color-border: var(--gray-200);
-  --color-background: var(--white);
+  --color-background: var(--pt-blanco);
+  --color-surface-alt: var(--pt-crema);
 
   /* Typography */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-base: var(--pt-font-body, 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  --font-family-heading: var(--pt-font-display, 'Literata', Georgia, serif);
+  --font-family-code: var(--pt-font-code, 'JetBrains Mono', ui-monospace, monospace);
 
   --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
   --font-size-sm: clamp(0.875rem, 1.75vw, 1rem);
   --font-size-base: clamp(1rem, 2vw, 1.125rem);
   --font-size-lg: clamp(1.125rem, 2.25vw, 1.25rem);
   --font-size-xl: clamp(1.25rem, 2.5vw, 1.5rem);
-  --font-size-2xl: clamp(1.75rem, 4vw, 3rem);
-  --font-size-3xl: clamp(2.25rem, 6vw, 4rem);
-  --font-size-4xl: clamp(3rem, 8vw, 6rem);
+  --font-size-2xl: clamp(1.75rem, 4vw, 2.75rem);
+  --font-size-3xl: clamp(2.125rem, 5.5vw, 3.5rem);
+  --font-size-4xl: clamp(2.5rem, 7vw, 5rem);
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-black: 900;
+  --font-weight-extrabold: 700;
+  --font-weight-black: 700;
 
-  --line-height-tight: 1.25;
+  --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
 
@@ -80,47 +87,35 @@
   --max-width-xl: 1280px;
   --max-width-2xl: 1536px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.15);
-  --shadow-glow: 0 0 40px rgba(217, 119, 6, 0.3);
-  --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-elevation-3: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-elevation-4: 0 16px 48px rgba(0, 0, 0, 0.16);
+  /* Shadows (tinta y azul de marca) */
+  --shadow-sm: 0 1px 2px 0 rgba(11, 22, 64, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(11, 22, 64, 0.10), 0 2px 4px -1px rgba(11, 22, 64, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(11, 22, 64, 0.10), 0 4px 6px -2px rgba(11, 22, 64, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(11, 22, 64, 0.10), 0 10px 10px -5px rgba(11, 22, 64, 0.04);
+  --shadow-glass: 0 8px 32px rgba(2, 50, 175, 0.10);
+  --shadow-glow: 0 0 32px rgba(2, 50, 175, 0.22);
+  --shadow-elevation-1: 0 2px 8px rgba(11, 22, 64, 0.05);
+  --shadow-elevation-2: 0 4px 16px rgba(11, 22, 64, 0.08);
+  --shadow-elevation-3: 0 8px 24px rgba(11, 22, 64, 0.12);
+  --shadow-elevation-4: 0 16px 48px rgba(11, 22, 64, 0.16);
 
   /* Border Radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  --radius-2xl: var(--pt-radius-card, 16px);
   --radius-3xl: 3rem;
-  --radius-full: 9999px;
+  --radius-full: var(--pt-radius-pill, 9999px);
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--cobalt-blue) 0%, var(--mauve) 100%);
-  --gradient-secondary: linear-gradient(135deg, var(--burnt-orange) 0%, var(--warm-yellow) 100%);
-  --gradient-rainbow: linear-gradient(
-    90deg,
-    var(--cobalt-blue) 0%,
-    var(--mauve) 20%,
-    var(--burnt-orange) 40%,
-    var(--warm-yellow) 60%,
-    var(--forest-green) 80%,
-    var(--cobalt-blue) 100%
-  );
-  --gradient-mesh: radial-gradient(at 0% 0%, var(--cobalt-blue) 0%, transparent 50%),
-                   radial-gradient(at 100% 0%, var(--mauve) 0%, transparent 50%),
-                   radial-gradient(at 100% 100%, var(--burnt-orange) 0%, transparent 50%),
-                   radial-gradient(at 0% 100%, var(--forest-green) 0%, transparent 50%);
+  /* Gradients (solo paleta del sello) */
+  --gradient-primary: linear-gradient(135deg, var(--pt-azul) 0%, var(--pt-azul-brillante) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--pt-amarillo) 0%, var(--pt-amarillo) 100%);
+  --gradient-rainbow: linear-gradient(90deg, var(--pt-azul) 0%, var(--pt-azul-brillante) 45%, var(--pt-amarillo) 100%);
 
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-bg: var(--pt-crema);
+  --glass-border: rgba(11, 22, 64, 0.06);
   --glass-blur: blur(10px);
 
   /* Transitions */
@@ -163,7 +158,9 @@ body {
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
+  font-style: italic;
   font-weight: var(--font-weight-bold);
+  font-optical-sizing: auto;
   line-height: var(--line-height-tight);
   color: var(--color-primary);
   margin-bottom: var(--spacing-md);
@@ -280,8 +277,13 @@ section {
   padding: var(--spacing-4xl) 0;
 }
 
+/* Fondo general blanco; la crema queda para acentos (tarjetas, franjas puntuales) */
 section:nth-child(even) {
-  background-color: var(--gray-50);
+  background-color: var(--color-background);
+}
+
+.section-crema {
+  background-color: var(--color-surface-alt);
 }
 
 /* Header & Navigation
@@ -301,22 +303,21 @@ section:nth-child(even) {
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) 0;
+  gap: var(--spacing-lg);
+  min-height: 72px;
+  padding: var(--spacing-sm) 0;
 }
 
 .site-logo {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-right: auto;
 }
 
 .site-logo img {
-  height: 50px;
+  height: 48px;
   width: auto;
 }
 
@@ -327,40 +328,55 @@ section:nth-child(even) {
 
 .main-nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xs);
   margin: 0;
   padding: 0;
 }
 
 .main-nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 0.875rem;
+  font-size: 0.9375rem;
   font-weight: var(--font-weight-medium);
-  padding: var(--spacing-sm) var(--spacing-md);
+  white-space: nowrap;
+  color: var(--pt-tinta);
   border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .main-nav a:hover {
-  background-color: var(--gray-100);
+  background-color: var(--color-surface-alt);
   color: var(--color-primary);
 }
 
 .main-nav a.active {
-  color: var(--color-secondary);
-  background-color: rgba(217, 119, 6, 0.1);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  background: linear-gradient(var(--pt-amarillo), var(--pt-amarillo)) no-repeat center bottom 4px / calc(100% - 1.75rem) 3px;
 }
 
 /* Language Toggle Button */
 .language-toggle {
-  background-color: var(--gray-100);
-  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-width: 48px;
+  padding: 0 var(--spacing-sm);
+  background-color: var(--white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text);
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
-  margin-left: var(--spacing-md);
 }
 
 .language-toggle:hover {
@@ -369,7 +385,7 @@ section:nth-child(even) {
   border-color: var(--color-primary);
 }
 
-.language-toggle:focus {
+.language-toggle:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -378,7 +394,11 @@ section:nth-child(even) {
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 4px;
+  width: 40px;
+  height: 40px;
+  margin-left: calc(var(--spacing-sm) * -1);
   background: none;
   border: none;
   cursor: pointer;
@@ -476,8 +496,8 @@ section:nth-child(even) {
   font-weight: var(--font-weight-bold);
   text-align: center;
   text-decoration: none;
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  border-radius: var(--radius-xl);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
   transition: all var(--transition-smooth);
@@ -519,8 +539,8 @@ section:nth-child(even) {
 }
 
 .btn-secondary {
-  background: var(--gradient-secondary);
-  color: var(--white);
+  background: var(--pt-amarillo);
+  color: var(--pt-tinta);
   box-shadow: var(--shadow-elevation-2);
 }
 
@@ -542,7 +562,7 @@ section:nth-child(even) {
 .btn-secondary:hover {
   transform: scale(1.05);
   box-shadow: var(--shadow-elevation-3), var(--shadow-glow);
-  color: var(--white);
+  color: var(--pt-tinta);
 }
 
 .btn-outline {
@@ -577,7 +597,7 @@ section:nth-child(even) {
 }
 
 .btn-large {
-  padding: var(--spacing-lg) var(--spacing-2xl);
+  padding: var(--spacing-md) var(--spacing-2xl);
   font-size: var(--font-size-lg);
 }
 
@@ -681,10 +701,7 @@ section:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg,
-    #FEFDFB 0%,
-    #FDF8F3 50%,
-    #FEFDFB 100%);
+  background-color: var(--color-background);
   padding: var(--spacing-4xl) 0;
   text-align: center;
   position: relative;
@@ -698,8 +715,9 @@ section:nth-child(even) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(30, 58, 138, 0.02) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(217, 119, 6, 0.02) 0%, transparent 50%);
+  background-image: url('../assets/images/talavera-patterns/patron-talavera-tile-blanco.svg');
+  background-size: 240px 240px;
+  opacity: 0.45;
   z-index: 0;
 }
 
@@ -721,9 +739,9 @@ section:nth-child(even) {
   width: 280px;
   height: 280px;
   margin: 0 auto var(--spacing-lg);
-  background-color: white;
+  background-color: var(--pt-blanco);
   border-radius: 50%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(11, 22, 64, 0.10);
   animation: float 6s ease-in-out infinite;
   display: flex;
   align-items: center;
@@ -748,8 +766,8 @@ section:nth-child(even) {
 
 .hero-title {
   font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-black);
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
   margin-bottom: var(--spacing-md);
   color: var(--color-primary);
 }
@@ -773,7 +791,7 @@ section:nth-child(even) {
 /* Footer
    ========================================================================== */
 .site-footer {
-  background-color: var(--rich-black);
+  background-color: var(--pt-tinta);
   color: var(--white);
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
 }
@@ -797,13 +815,23 @@ section:nth-child(even) {
 }
 
 .footer-section a:hover {
-  color: var(--color-secondary);
+  color: var(--pt-amarillo);
+}
+
+.footer-section p {
+  color: var(--gray-300);
+}
+
+.footer-logo {
+  height: 56px;
+  width: auto;
+  margin-bottom: var(--spacing-md);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-xl);
-  border-top: 1px solid var(--gray-700);
+  border-top: 1px solid rgba(255, 248, 230, 0.2);
   color: var(--gray-300);
   font-size: var(--font-size-sm);
 }
@@ -1006,6 +1034,7 @@ img {
   margin-top: var(--spacing-2xl);
   margin-bottom: var(--spacing-md);
   font-family: var(--font-family-heading);
+  font-style: italic;
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   color: var(--color-text);
@@ -1074,12 +1103,13 @@ img {
   padding: 0.2em 0.4em;
   border-radius: var(--radius-sm);
   font-size: 0.9em;
-  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
-  color: var(--color-accent);
+  font-family: var(--font-family-code);
+  color: var(--color-code);
 }
 
 .post-content pre {
-  background-color: var(--gray-900);
+  font-family: var(--font-family-code);
+  background-color: var(--pt-tinta);
   color: var(--white);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
@@ -1175,4 +1205,198 @@ img {
 
 .blog-post-card .btn {
   margin-top: auto;
+}
+
+/* Componentes del sistema de marca
+   ========================================================================== */
+code, kbd, pre, samp {
+  font-family: var(--font-family-code);
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pt-blanco);
+  background-color: var(--pt-azul);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Etiquetas (badges) */
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.badge-azul {
+  background-color: var(--pt-azul);
+  color: var(--pt-blanco);
+}
+
+.badge-amarillo {
+  background-color: var(--pt-amarillo);
+  color: var(--pt-tinta);
+}
+
+.badge-tinta {
+  background-color: var(--pt-tinta);
+  color: var(--pt-blanco);
+}
+
+/* Tarjeta de llamada a la acción */
+.cta-card {
+  background: var(--pt-crema);
+  border: 2px solid var(--color-primary);
+  text-align: center;
+}
+
+.section-crema {
+  background-color: var(--pt-crema) !important;
+}
+
+/* Sección destacada en azul de marca (logo a una tinta en blanco) */
+.section-azul {
+  background-color: var(--pt-azul) !important;
+  color: var(--pt-blanco);
+}
+
+.section-azul h2,
+.section-azul p {
+  color: var(--pt-blanco) !important;
+}
+
+.section-azul .btn-primary {
+  background: var(--pt-blanco);
+  color: var(--pt-azul);
+}
+
+.section-azul .btn-primary:hover {
+  color: var(--pt-azul);
+}
+
+/* Placeholders pendientes de datos reales (ver PR de migración de marca).
+   No se inventan datos: el enlace queda desactivado y marcado. */
+.is-pending {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn.is-pending {
+  background: var(--pt-blanco) !important;
+  color: var(--pt-tinta) !important;
+  border: 2px dashed var(--pt-azul) !important;
+  box-shadow: none !important;
+}
+
+.pending-tag {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.05em 0.5em;
+  border-radius: var(--radius-full);
+  background-color: var(--pt-amarillo);
+  color: var(--pt-tinta);
+  font-family: var(--font-family-base);
+  font-style: normal;
+  font-size: 0.75em;
+  font-weight: var(--font-weight-semibold);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.footer-section .is-pending {
+  color: var(--gray-300);
+}
+
+.pending-block {
+  padding: var(--spacing-xl);
+  background-color: var(--pt-crema);
+  border: 2px dashed var(--pt-azul);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+}
+
+.pending-block p {
+  margin-bottom: 0;
+}
+
+.section-azul {
+  background-image: url('../assets/images/talavera-patterns/patron-talavera-tile-azul.svg');
+  background-size: 240px 240px;
+}
+
+.section-azul .container {
+  background-color: var(--pt-azul);
+  border-radius: var(--radius-2xl);
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.section-azul-logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+@media (max-width: 480px) {
+  .site-logo img,
+  .footer-logo {
+    height: 46px;
+  }
+}
+
+/* Pie de página: contraste AA y enlaces en bloque (también por idioma) */
+.footer-bottom p {
+  color: var(--gray-300);
+}
+
+[lang="es"] .footer-section a[data-lang="es"],
+[lang="en"] .footer-section a[data-lang="en"],
+[lang="es"] .footer-section h3[data-lang="es"],
+[lang="en"] .footer-section h3[data-lang="en"] {
+  display: block;
+}
+
+.site-footer .social-link {
+  display: inline-flex;
+  margin-bottom: 0;
+  background-color: var(--pt-crema);
+  color: var(--pt-azul);
+}
+
+.site-footer .social-link:hover {
+  background-color: var(--pt-amarillo);
+  color: var(--pt-tinta);
+}
+
+.section-azul .container {
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.section-azul .btn {
+  min-width: 0;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+@media (max-width: 767px) {
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* El contenido del encabezado queda por encima del patrón Talavera */
+.hero > .container {
+  position: relative;
+  z-index: 1;
 }

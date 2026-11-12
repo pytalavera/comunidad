@@ -1,6 +1,6 @@
 /* ==========================================================================
    PyTalavera - Talavera Pattern Decorations
-   Decorative elements inspired by traditional Talavera pottery
+   Decoración inspirada en la Talavera poblana, con la paleta del sello
    ========================================================================== */
 
 /* Talavera Border Elements
@@ -94,10 +94,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/images/talavera-patterns/background-pattern.svg');
+  background-image: url('../assets/images/talavera-patterns/patron-talavera-tile-blanco.svg');
   background-repeat: repeat;
-  background-size: 200px 200px;
-  opacity: 0.15;
+  background-size: 240px 240px;
+  opacity: 0.35;
   z-index: 0;
   animation: pattern-drift 120s linear infinite;
 }
@@ -226,7 +226,7 @@
    ========================================================================== */
 .event-card {
   position: relative;
-  border-left: 4px solid var(--color-secondary);
+  border-left: 4px solid var(--pt-amarillo);
 }
 
 .event-card::before {
@@ -299,14 +299,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(
-    to right,
-    var(--cobalt-blue) 0%,
-    var(--burnt-orange) 25%,
-    var(--mauve) 50%,
-    var(--forest-green) 75%,
-    var(--warm-yellow) 100%
-  );
+  background: var(--gradient-rainbow);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
@@ -314,15 +307,7 @@
    ========================================================================== */
 .talavera-accent-line {
   height: 4px;
-  background: linear-gradient(
-    to right,
-    var(--cobalt-blue) 0%,
-    var(--burnt-orange) 20%,
-    var(--mauve) 40%,
-    var(--forest-green) 60%,
-    var(--warm-yellow) 80%,
-    var(--cobalt-blue) 100%
-  );
+  background: var(--gradient-rainbow);
   margin: var(--spacing-xl) 0;
 }
 
@@ -347,9 +332,9 @@
   left: -8px;
   right: -8px;
   bottom: -8px;
-  border: 2px solid var(--color-secondary);
+  border: 2px solid var(--pt-amarillo);
   border-radius: var(--radius-full);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 /* Pattern Animation on Hover
@@ -464,7 +449,7 @@
 .form-select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  box-shadow: 0 0 0 3px rgba(2, 50, 175, 0.15);
 }
 
 .form-textarea {
@@ -476,7 +461,7 @@
 .toc-sidebar {
   position: sticky;
   top: 100px;
-  background-color: var(--gray-50);
+  background-color: var(--pt-crema);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--color-primary);
@@ -511,3 +496,27 @@
   background-color: var(--color-primary);
   color: var(--white);
 }
+
+/* Team grid: centered cards, fixed width, works with 1 to n members */
+.grid.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+  justify-content: center;
+}
+
+.team-member-card h3 {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+}
+
+.card.team-member-card {
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.grid.team-grid{grid-template-columns:repeat(auto-fit,minmax(240px,280px))}
+.member-photo--pendiente{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--spacing-xs);background:var(--pt-crema)}
+.member-iniciales{font-family:var(--font-family-heading);font-style:italic;font-weight:700;font-size:3.5rem;line-height:1;color:var(--color-primary)}
+.member-pendiente-badge{font-size:.75rem;font-weight:var(--font-weight-semibold);letter-spacing:.04em;text-transform:uppercase;color:var(--pt-tinta);background:var(--pt-amarillo);padding:2px 10px;border-radius:var(--radius-full)}
+.grid.team-grid{grid-template-columns:minmax(0,340px);justify-content:center}
+@media (min-width:640px){.grid.team-grid{grid-template-columns:repeat(2,minmax(0,300px))}}
+@media (min-width:1100px){.grid.team-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.team-grid .team-member-card .member-photo{width:160px;height:160px}

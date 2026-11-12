@@ -17,19 +17,25 @@
   <meta property="og:url" content="https://pytalavera.github.io/comunidad/blog/posts/{{slug}}.html">
   <meta property="og:title" content="{{title}}">
   <meta property="og:description" content="{{excerpt}}">
-  <meta property="og:image" content="https://pytalavera.github.io/comunidad/assets/images/logo.svg">
+  <meta property="og:image" content="https://pytalavera.github.io/comunidad/assets/images/favicon/pytalavera-favicon-512.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://pytalavera.github.io/comunidad/blog/posts/{{slug}}.html">
   <meta property="twitter:title" content="{{title}}">
   <meta property="twitter:description" content="{{excerpt}}">
-  <meta property="twitter:image" content="https://pytalavera.github.io/comunidad/assets/images/logo.svg">
+  <meta property="twitter:image" content="https://pytalavera.github.io/comunidad/assets/images/favicon/pytalavera-favicon-512.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+  <link rel="icon" href="../../assets/images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/pytalavera-favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/pytalavera-favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/apple-touch-icon-180.png">
+  <meta name="theme-color" content="#0232AF">
 
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/tokens.css">
   <link rel="stylesheet" href="../../css/main.css">
   <link rel="stylesheet" href="../../css/talavera-patterns.css">
   <link rel="stylesheet" href="../../css/responsive.css">
@@ -37,7 +43,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Literata:ital,opsz,wght@1,7..72,700&display=swap" rel="stylesheet">
 
   <!-- Preload critical resources -->
   <link rel="preload" href="../../css/main.css" as="style">
@@ -51,8 +57,7 @@
       <div class="header-content">
         <!-- Logo -->
         <a href="../../index.html" class="site-logo">
-          <img src="../../assets/images/logo.svg" alt="PyTalavera Logo" width="50" height="50">
-          <span>PyTalavera</span>
+          <img src="../../assets/images/logos/logo4.svg" alt="PyTalavera · Comunidad Pythonista en Puebla" width="155" height="56">
         </a>
 
         <!-- Desktop Navigation -->
@@ -100,7 +105,7 @@
     <article class="container container-md" style="padding: var(--spacing-4xl) 0;">
       <!-- Post Header -->
       <header class="mb-xl">
-        <div class="badge" style="background-color: var(--{{categoryColor}}); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; display: inline-block; margin-bottom: var(--spacing-md);">{{category}}</div>
+        <div class="badge badge-{{categoryColor}}" style="margin-bottom: var(--spacing-md);">{{category}}</div>
         <h1 class="mt-md" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-md);">{{title}}</h1>
         <p style="color: var(--color-text-light); font-size: var(--font-size-md);">
           {{date}} • {{author}}
@@ -128,9 +133,10 @@
       <div class="footer-content">
         <!-- About Column -->
         <div class="footer-section">
-          <h3>PyTalavera</h3>
-          <p data-lang="es">Comunidad Python de Puebla, México.</p>
-          <p data-lang="en">Python Community in Puebla, Mexico.</p>
+          <h3 class="sr-only">PyTalavera</h3>
+          <img class="footer-logo" src="../../assets/images/logos/una-tinta/pytalavera-horizontal-una-tinta-blanco.svg" alt="PyTalavera" width="155" height="56">
+          <p data-lang="es">Comunidad Pythonista en Puebla</p>
+          <p data-lang="en">Pythonista Community in Puebla</p>
           <div class="social-links mt-md">
             <a href="https://www.instagram.com/pytalavera/" target="_blank" class="social-link" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -166,10 +172,10 @@
           <a href="../../codigo-de-conducta.html" data-lang="en">Code of Conduct</a>
           <a href="../../patrocinadores.html" data-lang="es">Patrocinadores</a>
           <a href="../../patrocinadores.html" data-lang="en">Sponsors</a>
-          <a href="https://forms.google.com/your-speaker-form" target="_blank" data-lang="es">Proponer Charla</a>
-          <a href="https://forms.google.com/your-speaker-form" target="_blank" data-lang="en">Propose a Talk</a>
-          <a href="https://forms.google.com/your-contact-form" target="_blank" data-lang="es">Contacto</a>
-          <a href="https://forms.google.com/your-contact-form" target="_blank" data-lang="en">Contact</a>
+          <a href="https://forms.gle/mygVWEknGR1oRtJE6" target="_blank" rel="noopener" data-lang="es">Proponer Charla</a>
+          <a href="https://forms.gle/mygVWEknGR1oRtJE6" target="_blank" rel="noopener" data-lang="en">Propose a Talk</a>
+          <a href="mailto:pytalavera@gmail.com?subject=Contacto%20PyTalavera" data-lang="es">Contacto</a>
+          <a href="mailto:pytalavera@gmail.com?subject=Contacto%20PyTalavera" data-lang="en">Contact</a>
         </div>
 
         <!-- Connect Column -->
